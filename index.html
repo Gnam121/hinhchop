@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hình Chóp Tứ Giác Đều AR</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ar.js/2.2.0/aframe-ar.min.js"></script>
-</head>
-<body style="margin: 0; overflow: hidden;">
-    <!-- AR Scene -->
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@1.7.2/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <!-- Marker Hiro để hiển thị hình chóp -->
-        <a-marker preset="hiro">
-            <!-- Tạo hình chóp tứ giác đều -->
-            <a-entity position="0 0 0">
-                <!-- Đáy hình vuông -->
-                <a-box position="0 0 0" depth="1" height="0.1" width="1" color="blue"></a-box>
-                <!-- Mặt bên hình chóp -->
-                <a-entity geometry="primitive=cone; height=1.2; radiusBottom=0.71; radiusTop=0"
-                          position="0 0.6 0"
-                          material="color: red">
-                </a-entity>
-            </a-entity>
-        </a-marker>
-        <a-camera-static></a-camera-static>
+      <!-- Marker để hiển thị hình chóp -->
+      <a-marker preset="hiro">
+        <!-- Hình chóp tứ giác đều -->
+        <a-entity position="0 0 0">
+          <a-cone color="blue" height="2" radius-bottom="1"></a-cone>
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
-</body>
+  </body>
 </html>
